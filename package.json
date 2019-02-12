@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/ttahmouch/stockx-challenge/issues"
   },
-  "homepage": "https://github.com/ttahmouch/stockx-challenge#readme"
+  "homepage": "https://github.com/ttahmouch/stockx-challenge#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
 }
