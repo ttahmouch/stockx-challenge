@@ -25,9 +25,14 @@ TrueToSizeCalculation = average of the true to size entries for a given shoe
 + If for some reason you get stumped, feel free to email me for assistance.
 + This exercise is not meant to be stressful or cut-throat so do your best.
 + Do not worry about whether the data you are “crowdsourcing” is correct in the real world,
-i.e., in this example, your data might show that an adidas Yeezy fits too small. What you should focus on is ensuring that your program is able to calculate the appropriate true to size metric for an arbitrary set of true-to-size data.
-+ Also, this should be able to be run on any engineer’s local machine, this includes the database. In order to make this possible, please document the necessary steps to get your service and the necessary technologies running locally.
-+ While it is not a requirement, one way to ensure a system behaves as expected on many machines is to containerize the system. One technology for doing this is Docker.
+i.e., in this example, your data might show that an adidas Yeezy fits too small.
+What you should focus on is ensuring that your program is able to calculate the appropriate true to size metric for an
+arbitrary set of true-to-size data.
++ Also, this should be able to be run on any engineer’s local machine, this includes the database.
+In order to make this possible, please document the necessary steps to get your service and the necessary technologies
+running locally.
++ While it is not a requirement, one way to ensure a system behaves as expected on many machines is to containerize the
+system. One technology for doing this is Docker.
 
 If you have any questions, do not hesitate to email me at [miles@stockx.com](mailto:miles@stockx.com).
 
@@ -48,4 +53,4 @@ If we add another data point, 2, to the collected data, our calculation should r
 + **True to size data:** 1, 2, 2, 3, 2, 3, 2, 2, 3, 4, 2, 5, 2, 3, 2
 + **True to size calculation:** 2.5333333333333
 
-
+#### [Initial Thoughts](./THOUGHTS.md)
