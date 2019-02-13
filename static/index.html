@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<!--suppress HtmlUnknownTarget -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>StockX Client</title>
+</head>
+<body>
+<div>
+    <form method="POST" action="/catalog/shoes/adidas%20Yeezy/true_to_size_calculation">
+        <div>
+            <label for="size">
+                On a scale of one to five, how true-to-size is the Adidas Yeezy? One means "really small,"
+                and five means "really big."
+            </label>
+            <input id="size" type="number" name="size" min="1" max="5"/>
+        </div>
+        <button type="submit">Tell Us How True-To-Size The Adidas Yeezy Really Is.</button>
+    </form>
+    <form method="GET" action="/catalog/shoes/adidas%20Yeezy/true_to_size_calculation">
+        <button type="submit">How True-To-Size Is The Adidas Yeezy Really?</button>
+    </form>
+</div>
+</body>
+</html>
