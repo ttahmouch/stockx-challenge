@@ -4,7 +4,8 @@
   "description": "This is a containerized, Node.js HTTP API for calculating real-time, crowd-sourced user data about whether a sneaker is \"true-to-size.\"",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
