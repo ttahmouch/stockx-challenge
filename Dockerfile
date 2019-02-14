@@ -5,5 +5,5 @@ WORKDIR /usr/src/stockx-challenge
 COPY package*.json ./
 RUN npm install
 COPY . .
-EXPOSE 8080
+EXPOSE 8080 9229
 CMD [ "npm", "start" ]
