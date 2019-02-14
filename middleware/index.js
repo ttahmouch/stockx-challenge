@@ -22,13 +22,13 @@ module.exports = {
         if (requestAcceptsAMediaType && !responseMediaTypeIsSupported) {
             return res.status(406).send();
         } else if (requestHasAMediaType && !requestMediaTypeIsSupported) {
-            return res.locals.sendResponse({
-                status: 415,
-                headers: {},
-                body: {reason: 'Unsupported Media Type'}
-            });
+            return res.locals.sendResponse({status: 415, headers: {}, body: {reason: 'Unsupported Media Type'}});
         } else {
             return next();
         }
+    },
+    onInternalServerError: (err, req, res) => {
+        console.error(err);
+        return res.locals.sendResponse({status: 500, headers: {}, body: {reason: 'Internal Server Error'}});
     }
 };
