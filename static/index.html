@@ -4,22 +4,44 @@
 <head>
     <meta charset="UTF-8">
     <title>StockX Client</title>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
 </head>
 <body>
-<div>
-    <form method="POST" action="/catalog/shoes/adidas%20Yeezy/true_to_size_calculation">
-        <div>
-            <label for="size">
-                On a scale of one to five, how true-to-size is the Adidas Yeezy? One means "really small,"
-                and five means "really big."
-            </label>
-            <input id="size" type="number" name="size" min="1" max="5"/>
+<div class="container">
+    <div class="row">
+        <div class="col p-3">
+            <h5>Step 1. Add Adidas Yeezy To The Catalog Database.</h5>
+            <form method="POST" action="/catalog/shoes">
+                <div class="form-group">
+                    <input id="name" type="hidden" name="name" value="adidas Yeezy"/>
+                </div>
+                <button type="submit" class="btn btn-primary">You Should Totally Sell The Adidas Yeezy.</button>
+            </form>
         </div>
-        <button type="submit">Tell Us How True-To-Size The Adidas Yeezy Really Is.</button>
-    </form>
-    <form method="GET" action="/catalog/shoes/adidas%20Yeezy/true_to_size_calculation">
-        <button type="submit">How True-To-Size Is The Adidas Yeezy Really?</button>
-    </form>
+        <div class="col p-3">
+            <h5>Step 2. Add True-To-Size Data For the Adidas Yeezy To The Catalog Database.</h5>
+            <form method="POST" action="/catalog/shoes/adidas%20Yeezy/true_to_size_calculation">
+                <div class="form-group">
+                    <label for="size">
+                        On a scale of one to five, how true-to-size is the Adidas Yeezy? One means "really small,"
+                        and five means "really big."
+                    </label>
+                    <input id="size" class="form-control" type="number" name="size" min="1" max="5"/>
+                </div>
+                <button type="submit" class="btn btn-primary">Tell Us How True-To-Size The Adidas Yeezy Really Is.
+                </button>
+            </form>
+        </div>
+        <div class="col p-3">
+            <h5>Step 3. Retrieve True-To-Size Calculation For the Adidas Yeezy From The Catalog Database.</h5>
+            <form method="GET" action="/catalog/shoes/adidas%20Yeezy/true_to_size_calculation">
+                <button type="submit" class="btn btn-primary">How True-To-Size Is The Adidas Yeezy Really?</button>
+            </form>
+        </div>
+    </div>
 </div>
 </body>
 </html>
