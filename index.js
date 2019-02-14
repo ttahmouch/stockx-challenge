@@ -1,24 +1,23 @@
 // noinspection ES6ConvertRequireIntoImport
 let express = require('express');
-let {
-    host,
-    port
-} = require('./configuration.json');
-let {
-    onInitializeConvenienceResponseMethods,
-    onRequestOrResponseMediaTypeIsUnsupported
-} = require('./middleware');
-let {
-    onShoeResourceRequested
-} = require('./params');
-let {
-    onShoeTrueToSizeCalculationCreated,
-    onShoeTrueToSizeCalculationRequested
-} = require('./routes');
+let {Pool} = require('pg');
+let {stockx_challenge, postgres} = require('./configuration');
+let {onInitializeConvenienceResponseMethods, onRequestOrResponseMediaTypeIsUnsupported} = require('./middleware');
+let {onShoeResourceRequested} = require('./params');
+let {onShoeTrueToSizeCalculationCreated, onShoeTrueToSizeCalculationRequested} = require('./routes');
+
+let {host, port} = stockx_challenge;
+let pool = new Pool(postgres);
+
+let onInitializeDatabase = (req, res, next) => {
+    res.locals.database = pool;
+    return next();
+};
 
 // noinspection JSUnresolvedFunction
 express()
     .use(express.static('static'))
+    .use(onInitializeDatabase)
     .use(onInitializeConvenienceResponseMethods)
     .use(onRequestOrResponseMediaTypeIsUnsupported)
     .use(express.json())
