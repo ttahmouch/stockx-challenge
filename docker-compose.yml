@@ -1,0 +1,19 @@
+version: "3.1"
+services:
+  stockx-challenge:
+    build: .
+    depends_on:
+      - postgres
+    restart: always
+    ports:
+      - "8080:8080"
+      - "9229:9229"
+  postgres:
+    build: ./database
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: catalog
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
