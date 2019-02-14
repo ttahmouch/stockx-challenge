@@ -22,4 +22,14 @@ content-type:application/json
 {"size":5}
 
 GET /catalog/shoes/:shoe/true_to_size_calculation
+
+POST /catalog/shoes
+content-type:application/x-www-form-urlencoded
+
+name=adidas%20Yeezy
+
+POST /catalog/shoes
+content-type:application/json
+
+{"name":"adidas Yeezy"}
 ```
