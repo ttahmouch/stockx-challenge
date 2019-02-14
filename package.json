@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/ttahmouch/stockx-challenge#readme",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "pg": "^7.8.0"
   }
 }
