@@ -1,26 +1,19 @@
 module.exports = {
     onShoeResourceRequested: (req, res, next, shoe) => {
-        let retrieveAllShoeResourcesWithName = `SELECT * FROM shoes WHERE name='${shoe}';`;
-        let retrieveTrueToSizeDataForShoeResource = `SELECT * FROM shoes_true_to_size_data WHERE name='${shoe}';`;
+        let retrieveAllShoeResourcesWithName = `SELECT * FROM shoes WHERE name=$1;`;
 
-        return res.locals.database.query(retrieveAllShoeResourcesWithName, (error, {rowCount}) => {
+        return res.locals.database.query(retrieveAllShoeResourcesWithName, [shoe], (error, results) => {
             if (error) {
                 return next(error);
-            } else if (!rowCount) {
+            } else if (!results.rowCount) {
                 return res.locals.sendResponse({
                     status: 404,
                     headers: {},
                     body: {reason: 'Not Found', message: `${shoe} could not be found.`}
                 });
             } else {
-                return res.locals.database.query(retrieveTrueToSizeDataForShoeResource, (error, {rows}) => {
-                    if (error) {
-                        return next(error);
-                    } else {
-                        res.locals.shoe = {name: shoe, true_to_sizes: rows.map(({true_to_size}) => true_to_size)};
-                        return next();
-                    }
-                });
+                res.locals.shoe = {name: shoe};
+                return next();
             }
         });
     }
