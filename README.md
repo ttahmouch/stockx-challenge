@@ -54,3 +54,4 @@ If we add another data point, 2, to the collected data, our calculation should r
 + **True to size calculation:** 2.5333333333333
 
 #### [Initial Thoughts](./THOUGHTS.md)
+#### [Getting Started](./GETTING_STARTED.md)
